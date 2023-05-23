@@ -57,6 +57,8 @@ NOS PERMITEN COMPRAR VALORES
 
 const pruebaCom = 5>1; //true
 
+const operador = 7 > 1 ? 'El primer valor es mayor que el segundo' : 'El segundo valor es mayor que el primero';
+
 console.log(pruebaCom);
 
 
