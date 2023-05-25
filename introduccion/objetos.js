@@ -22,5 +22,9 @@ console.log(persona['edad']);
 
 const variable = 'suscripciones';
 
+persona.pais = 'Persona';
 
 console.log(persona.suscripciones.correo );
+ 
+//acceder a una funcion de un objeto
+persona.saludo();
