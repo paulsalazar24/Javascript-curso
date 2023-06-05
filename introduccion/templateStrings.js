@@ -10,5 +10,3 @@ console.log(`La persona es pais ${nombre} tiene ${edad} y es de ${pais}`);
 
 
 
-
- 
