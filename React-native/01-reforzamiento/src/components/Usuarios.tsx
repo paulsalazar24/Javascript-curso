@@ -1,22 +1,8 @@
-import { useEffect, useState } from "react";
-import { reqResApi } from "../api/reqRes";
-import { ReqResListado, Usuario } from "../interfaces/reqRes";
+import { Usuario } from "../interfaces/reqRes";
+import { useUsuario } from "../hooks/useUsuarios";
 
 export const Usuarios = () => {
-
-const [usuarios, setUsuarios] = useState<Usuario[]>([]);
-
-useEffect(() => {
-   
-    caragarUsuarios()
-},[])
-
-const caragarUsuarios = async() =>{
-  const resp = await reqResApi.get<ReqResListado>('/users')
-  setUsuarios(resp.data.data);
-  
-}
-
+  const {usuarios, caragarUsuarios} = useUsuario();
 
 const renderItem = ({id, first_name, last_name, email, avatar}: Usuario) => {
   return (
@@ -54,6 +40,9 @@ const renderItem = ({id, first_name, last_name, email, avatar}: Usuario) => {
           }
         </tbody>
       </table>
+      <button className="btn btn-primary"
+      onClick={caragarUsuarios}>siguientes</button>
+      &nbsp;
       <button className="btn btn-primary"
       onClick={caragarUsuarios}>siguientes</button>
     </>
