@@ -1,15 +1,12 @@
 import { useState } from "react";
 
-export const useForm = () => {
+export const useForm = <T extends Object>(formulario:T) => {
 
-    const [formulario, setFormulario] = useState({
-        email: 'test@gmail.com',
-        password: '12345'
-    });
+    const [state, setState] = useState(formulario);
     
-    const onChange = (value:string, campo:string) => {
-        setFormulario({
-            ...formulario,
+    const onChange = (value:string, campo: keyof T) => {
+        setState({
+            ...state,
             [campo]: value,
         });
     
@@ -17,8 +14,9 @@ export const useForm = () => {
     
 
     return {
+        ...state,
         onChange,
-        formulario
+        formulario: state
     }
     
 
