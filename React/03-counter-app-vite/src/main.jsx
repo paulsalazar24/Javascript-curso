@@ -10,6 +10,6 @@ ReactDom.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         {/* <App /> */}
         {/* <FirstApp /> */}
-        <ConterApp value={12} />
+        <ConterApp  />
     </React.StrictMode>
 )
